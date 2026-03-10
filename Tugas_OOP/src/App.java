@@ -140,7 +140,22 @@ public class App {
                 continue;
         }
 
-        Character enemy = new Warrior("Enemy");
+        int enemyType = rand.nextInt(3);
+        Character enemy;
+
+        switch (enemyType) {
+            case 0:
+                enemy = new Warrior("Enemy Warrior");
+                break;
+            case 1:
+                enemy = new Mage("Enemy Mage");
+                break;
+            default:
+                enemy = new Archer("Enemy Archer");
+                break;
+        }
+
+        System.out.println("\n!!! Kamu akan melawan " + enemy.getName() + " !!!");
 
         while(player.getHealth() > 0 && enemy.getHealth() > 0){
             System .out.println("\n=== MENU ===");
@@ -199,4 +214,5 @@ public class App {
         
     }
     
+
 }
